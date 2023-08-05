@@ -1,0 +1,94 @@
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+
+    table {
+        width: 100%;
+
+        tr {
+            th {
+                text-align: start;
+                padding: 0 0 20px 0;
+
+                &:nth-child(4) {
+                    text-align: center;
+                }
+            }
+
+            td {
+                border: 1px solid #222;
+                padding: 5px;
+
+                &:nth-child(4) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .plus,
+                    .minus {
+                        border: 1px solid grey;
+                        color: grey;
+                        padding: 0 10px;
+                        cursor: pointer;
+
+                        &:active {
+                            transform: scale(.95);
+                        }
+                    }
+
+                    .plus {
+                        margin-right: 5px;
+                    }
+
+                    .minus {
+                        margin-left: 5px;
+                    }
+                }
+
+                &:last-child {
+                    color: blue;
+                    text-decoration-line: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .basket-count_content {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .payment_block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            button {
+                width: 150px;
+                padding: 7px 0;
+                margin-bottom: 10px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                border: none;
+                background-color: #222;
+                color: #fff;
+                cursor: pointer;
+
+                &:active {
+                    transform: scale(.99);
+                }
+            }
+        }
+
+        .count_block {
+            h1 {
+                line-height: 1;
+                font-size: 18px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 500;
+            }
+        }
+    }
+}

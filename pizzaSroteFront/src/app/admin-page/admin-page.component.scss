@@ -1,0 +1,129 @@
+.event_modal {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(#000, .8);
+    z-index: 9;
+
+    .modalClose {
+        position: absolute;
+        top: 40px;
+        right: 80px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 500px;
+        height: 100%;
+        margin: auto;
+        background-color: #222;
+
+        input {
+            width: 250px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            width: 270px;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #581;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+
+            &:active {
+                background-color: #5819;
+            }
+        }
+    }
+
+    .photo-pizza_block {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: -1;
+
+        img {
+            width: 500px;
+            width: 500px;
+        }
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+
+    table {
+        width: 100%;
+
+        tr {
+            th {
+                text-align: start;
+                padding: 0 0 20px 0;
+
+                &:last-child {
+                    width: 70px;
+                }
+            }
+
+            td {
+                border: 1px solid #222;
+                padding: 5px;
+
+                &:nth-child(4) {
+                    color: blue;
+                    cursor: pointer;
+                }
+
+                &:last-child {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    mat-icon {
+                        cursor: pointer;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .add-pizza_block {
+        margin-top: 20px;
+
+        button {
+            width: 150px;
+            padding: 10px;
+            background-color: #581;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+
+            &:active {
+                background-color: #5819;
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.header {
+    position: relative;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #222;
+
+    .header_title,
+    .header_description {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        cursor: pointer;
+    }
+
+    .header_description {
+        position: absolute;
+        height: 25px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        right: 30px;
+    }
+}

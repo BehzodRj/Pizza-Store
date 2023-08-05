@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Имя</th>
+                <th>Цена</th>
+                <th>Количество</th>
+                <th>Общая цена</th>
+                <th>Действие</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cart of cartData; let idx = index">
+                <td>{{ idx + 1 }}</td>
+                <td>{{ cart.name }}</td>
+                <td>{{ cart.price }}</td>
+                <td>
+                    <div class="plus" (click)="addQuantity(cart.id, cart.price)">+</div>
+                    {{ cart.quantity }}
+                    <div class="minus" (click)="removeQuantity(cart.id, cart.price)">-</div>
+                </td>
+                <td>{{ cart.quantityPrice }} сомон</td>
+                <td (click)="deleteCart(idx)">Удалить</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="basket-count_content">
+        <div class="payment_block">
+            <button routerLink="/">Ещё добавить</button>
+            <button (click)="payment()">Оплатить</button>
+        </div>
+        <div class="count_block">
+            <h1>Доставка: {{ deliveryNumber }} сомон</h1>
+            <h1>Итого: {{ allPrice }} сомон </h1>
+        </div>
+    </div>
+</div>

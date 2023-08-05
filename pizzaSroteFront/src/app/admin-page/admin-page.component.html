@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+<div class="event_modal" *ngIf="modalPhotoPizza">
+    <mat-icon class="modalClose" (click)="modalPhotoPizza = false">close</mat-icon>
+    <div class="photo-pizza_block">
+        <img [src]="pizzaPhoto" alt="" *ngIf="pizzaPhoto.length > 0">
+        <h1 style="color: #fff;" *ngIf="pizzaPhoto.length == undefined ">К сожелению нет фото</h1>
+    </div>
+</div>
+
+<div class="event_modal" *ngIf="modalAdd">
+    <mat-icon class="modalClose" (click)="modalAdd = false">close</mat-icon>
+    <form [formGroup]="eventPizzaForm">
+        <input type="text" placeholder="Имя" formControlName="name">
+        <input type="number" placeholder="Цена" formControlName="price">
+        <input type="file" (change)="file($event)">
+        <button [disabled]="eventPizzaForm.invalid" (click)="addPizzaButton()">Добавить</button>
+    </form>
+</div>
+
+<div class="event_modal" *ngIf="modalEdit">
+    <mat-icon class="modalClose" (click)="modalEdit = false">close</mat-icon>
+    <form [formGroup]="eventPizzaForm">
+        <input type="text" placeholder="Имя" formControlName="name">
+        <input type="number" placeholder="Цена" formControlName="price">
+        <input type="file" (change)="file($event)">
+        <button [disabled]="eventPizzaForm.invalid" (click)="editPizzaButton()">Изменить</button>
+    </form>
+</div>
+
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Имя</th>
+                <th>Цена</th>
+                <th>Фото</th>
+                <th>Действие</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pizza of pizzaData; let idx = index">
+                <td>{{ idx + 1 }}</td>
+                <td>{{ pizza.name }}</td>
+                <td>{{ pizza.price }} сомон</td>
+                <td (click)="fullPizzaPhoto(pizza.photo)">{{ pizza.photo.length > 0 ? 'Есть фото' : 'Нет фото' }}</td>
+                <td>
+                    <mat-icon (click)="openModalEdit(pizza.id, pizza.photo)">edit</mat-icon>
+                    <mat-icon (click)="deletePizza(pizza.id, pizza.name)">delete</mat-icon>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="add-pizza_block">
+        <button (click)="openModalAdd()">Добавить</button>
+    </div>
+</div>

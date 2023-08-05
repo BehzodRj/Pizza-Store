@@ -1,0 +1,16 @@
+<div class="container">
+    <app-header [myCartData]="myCartLength"></app-header>
+
+    <div class="pizza-menu_container">
+        <div class="pizza-menu_items" *ngFor="let home of homeData; let idx = index">
+            <img class="img" [src]="home.photo">
+            <div class="pizza-menu_about">
+                <h1 class="pizza-menu_title">{{ home.name }}</h1>
+                <h1 class="pizza-menu_description">{{ home.price }} с</h1>
+            </div>
+
+            <button class="pizza-menu_buy" *ngIf="home.order == true" (click)="addToCart(home.id)">В карзину</button>
+            <button class="pizza-menu_buy" *ngIf="home.order == false" (click)="removeToCart(home.id, idx)">Отменить</button>
+        </div>
+    </div>
+</div>
